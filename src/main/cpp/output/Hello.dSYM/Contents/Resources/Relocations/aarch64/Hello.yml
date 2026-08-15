@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/rosairypaniaguagarcia/c++; the saga/the-first-take-2/src/main/cpp/output/Hello'
+relocations:     []
+...
