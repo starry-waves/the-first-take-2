@@ -5,13 +5,9 @@ using text_t = std::string;
 
 int main(){
 
-    int num;
-    do{
-        std::cout << "enter a positive number: ";
-        std::cin >> num;
-    } while(num < 0);
-
-    std::cout << "the number is: " << num;
+    for(int i = 1; i < 4; i++){
+        std::cout << "happy new year!\n";
+    }
 
 
     return 0;
