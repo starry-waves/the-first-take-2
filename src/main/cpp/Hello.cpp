@@ -1,57 +1,52 @@
 #include <iostream>
 
-//if statements!
-//create a program that checks the user's age. if they are under 18, they cannot use the site. else, they are good to go
-
+//una calculadora
 
 using text_t = std::string;
 
 int main(){
 
-    int month;
-    std::cout << "Enter the month (1-12): ";
-    std::cin >> month;
-    
-    switch(month){
-        case 1: 
-        std::cout << "it is january";
+    char op;
+    double num1;
+    double num2;
+    double result;
+
+    std::cout << "~~~~~~~~~~~~~~ calculator ~~~~~~~~~~~~~~\n\n\n";
+   
+    std::cout << "\n\nenter the first number: ";
+    std::cin >> num1;
+     std::cout << "enter + , - , /, *, or ^ ";
+    std::cin >> op;
+    std::cout << "\n\ngreat! now enter the second number: ";
+    std::cin >> num2;
+
+    switch(op){
+        case '+':
+        result = num1 + num2;
         break;
-        case 2: 
-        std::cout << "it is february";
+
+        case '-':
+        result = num1 - num2;
         break;
-        case 3: 
-        std::cout << "it is march";
+
+        case '*':
+        result = num1 * num2;
         break;
-        case 4: 
-        std::cout << "it is april";
+
+        case '/':
+        result = num1 / num2;
         break;
-        case 5: 
-        std::cout << "it is may";
+
+        case '^':
+        result = pow(num1, num2);
         break;
-        case 6: 
-        std::cout << "it is june";
-        break;
-        case 7: 
-        std::cout << "it is july";
-        break;
-        case 8: 
-        std::cout << "it is august";
-        break;
-        case 9: 
-        std::cout << "it is september";
-        break;
-        case 10: 
-        std::cout << "it is october";
-        break;
-        case 11: 
-        std::cout << "it is november";
-        break;
-        case 12: 
-        std::cout << "it is december";
-        break;
+
         default:
-        std::cout << "please enter only numbers 1-12, unless you have access to the " << month << " month";
+        std::cout << "i dont have the skill to code that, use desmos";
+        break;
     }
+
+    std::cout << "\n\nthe result is: " << result << " !";
 
     return 0;
 }
