@@ -5,18 +5,14 @@ using text_t = std::string;
 
 int main(){
 
-    text_t name;
+    int num;
+    do{
+        std::cout << "enter a positive number: ";
+        std::cin >> num;
+    } while(num < 0);
 
-    
+    std::cout << "the number is: " << num;
 
-    while(name.empty()){
-        std::cout << "type ur name!!!";
-        std::getline(std::cin , name);
-    }
-
-    std::cout << "hello " << name;
-
-  
 
     return 0;
 }
