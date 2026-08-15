@@ -1,30 +1,24 @@
 #include <iostream>
 
+//making a hypotenuse calc!!
+//hypotenuse is a^2 + b^2 = c^2, or c = sqrt (a^2 + b^2)
+
 using text_t = std::string;
 
 int main(){
 
-    double x = 3;
-    double y = 4;
-    double z = 5;
-    
-    z = std::max(x , y);
-    // z = the greater number
-    z = std::min(x , y);
-    // z = the lesser number
-    z = pow(x , y);
-    // z = x^y
-    z = sqrt(y);
-    // z = square root of y
-    z = abs(-3);
-    // z = |-3|
-    z = round(x);
-    // z = x (rounded)
-    z = ceil(x);
-    // z = x (rounded up)
-    z = floor(x);
-    // z = x (rounded down)
+    double a;
+    double b;
+    double c;
+    std::cout<< "hypotenuse calculator!\nPlease type in value of a: ";
+    std::cin >> a;
 
+    std::cout << "\ngreat! now type in value of b: ";
+    std::cin >> b;
+
+    c = sqrt(pow(a , 2) + pow(b , 2));
+
+    std::cout << "the value of c is :" << c << " !";
 
     return 0;
 }
