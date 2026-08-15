@@ -1,53 +1,26 @@
 #include <iostream>
 
-//una calculadora
+//ternary operator
 
 using text_t = std::string;
 
 int main(){
 
-    char op;
-    double num1;
-    double num2;
-    double result;
+    // int grade = 75;
 
-    std::cout << "~~~~~~~~~~~~~~ calculator ~~~~~~~~~~~~~~\n\n\n";
-   
-    std::cout << "\n\nenter the first number: ";
-    std::cin >> num1;
-     std::cout << "enter + , - , /, *, or ^ ";
-    std::cin >> op;
-    std::cout << "\n\ngreat! now enter the second number: ";
-    std::cin >> num2;
+    // grade >= 60 ? std::cout << "you pass! yay!" : std::cout << "you fail! loser";
 
-    switch(op){
-        case '+':
-        result = num1 + num2;
-        break;
+    int num = 9;
 
-        case '-':
-        result = num1 - num2;
-        break;
+    num % 2 == 0 ? std::cout << "the number is even" : std::cout << "the number is odd";
+    // note: number 1 corresponds to true, while 0 corresponds to false. so if the ==0 asn't there, the expression would evaluate to true because it would equal ne. since the true case says it's even, this results in a logical error. to fix, switch the cases.
 
-        case '*':
-        result = num1 * num2;
-        break;
+    bool hungry = true;
 
-        case '/':
-        result = num1 / num2;
-        break;
-
-        case '^':
-        result = pow(num1, num2);
-        break;
-
-        default:
-        std::cout << "i dont have the skill to code that, use desmos";
-        break;
-    }
-
-    std::cout << "\n\nthe result is: " << result << " !";
-
+    hungry ? std::cout << "ur hungry" : std::cout << "ur full"; 
+    // or
+    std::cout << (hungry ? "you are hungry" : "you are full");
+    
     return 0;
 }
 
