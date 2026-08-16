@@ -1,30 +1,39 @@
 #include <iostream>
+#include <ctime>
 
 
 using text_t = std::string;
 
 int main(){
 
-    int rows;
-    int columns;
-    char symbol;
+    srand(time(NULL));
 
-    std::cout << "how many rows? ";
-    std::cin >> rows;
+    int num = (rand() % 5) + 1;
 
-    std::cout << "how many columns? ";
-    std::cin >> columns;
+    switch(num){
+        case 1:
+        std::cout << "u win a good job pencil\n";
+        break;
 
-    std::cout << "enter a symbol to use: ";
-    std::cin >> symbol;
+        case 2:
+        std::cout << "u win a cool bracelet\n";
+        break;
 
+        case 3:
+        std::cout << "u win a free lunch\n";
+        break;
 
-    for (int i = 1; i <= rows; i++){
-        for (int j = 1; j <= columns; j++){
-        std::cout << symbol;
-        }
-        std::cout << '\n';
+        case 4: 
+        std::cout << "u win a gift card\n";
+        break;
+
+        case 5:
+        std::cout << "u win concert tickets\n";
+        break;
+
     }
+
+    std::cout << "num";
 
     return 0;
 }
