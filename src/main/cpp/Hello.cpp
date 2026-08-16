@@ -4,23 +4,27 @@
 
 using text_t = std::string;
 
-double square (double length);
-
+text_t concatStrings(text_t one, text_t two);
 int main(){
-    double length;
-    double area;
-    std::cout << "area calculator/ practice with perfect squares!\nplease insert a length: ";
-    std::cin >> length;
-    
-    area = square(length);
+    text_t fstname;
+    text_t lstname;
+    text_t full;
 
-    std::cout << "the area is: " << area << " units squared!";
+    std::cout << "type first name: ";
+    std::cin >> fstname;
 
+    std::cout << "\ntype in last name: ";
+    std::cin >> lstname;
+
+    full = concatStrings(fstname, lstname);
+
+    std::cout << "your full name is: " << full;
 
     return 0;
 }
-double square (double length){
-    return length * length;
+text_t concatStrings(text_t one, text_t two){
+    return one + ' ' + two;
 }
+
 
 
