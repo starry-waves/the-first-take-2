@@ -4,34 +4,23 @@
 
 using text_t = std::string;
 
+void happyBirthday(text_t name, int age);
+//its common practice to declare a function first, then define it later
+
 int main(){
+    text_t name;
+    int age;
+    std::cout << "hello! what is ur name? ";
+    std::getline(std::cin >> std::ws , name);
 
-    int num;
-    int guess;
-    int tries = 0;
-
-    srand(time(NULL));
-    num = (rand () % 100) + 1;
-
-    std::cout << "~~~ number guessing game ~~~\n";
-
-    do{
-        std::cout << "enter a guess between 1 - 100: \n";
-        std::cin >> guess;
-        tries++;
-
-        if(guess > num){
-            std::cout << "too high!\n";
-        } else if (guess < num){
-            std::cout << "too low!\n";
-        } else{
-            std::cout << "correct!!\n number of tries: " << tries << '\n';
-        } 
-    }while (guess != num);
-
-    std::cout << "thanks for playing!\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+    std::cout << "how old are u? ";
+    std::cin >> age;
+    happyBirthday(name, age);
 
 
     return 0;
 }
+void happyBirthday(text_t name, int age){
+    std::cout << "happy birthday to u!\nhappy birthday to u!\nhappy birthday dear " << name << "\nhappy birthday to u!\nyou are: " << age << " years old!";
+} //create a function to sing happy birthday
 
