@@ -4,26 +4,25 @@
 
 using text_t = std::string;
 
-text_t concatStrings(text_t one, text_t two);
+void bakepizza();
+void bakepizza(text_t topping1, text_t topping2);
 int main(){
-    text_t fstname;
-    text_t lstname;
-    text_t full;
+    text_t topping1;
+    text_t topping2;
 
-    std::cout << "type first name: ";
-    std::cin >> fstname;
-
-    std::cout << "\ntype in last name: ";
-    std::cin >> lstname;
-
-    full = concatStrings(fstname, lstname);
-
-    std::cout << "your full name is: " << full;
-
-    return 0;
+    std::cout << "lets bake a pizza!!! please type in a topping: ";
+    std::cin >> topping1;
+    std::cout << "\nok great! type in another one: ";
+    std::cin >> topping2;
+    bakepizza(topping1, topping2);
+    
 }
-text_t concatStrings(text_t one, text_t two){
-    return one + ' ' + two;
+
+void bakepizza(){
+    std::cout << "heres ur pizza!\n";
+}
+void bakepizza(text_t topping1, text_t topping2){
+    std::cout <<"\nheres ur " << topping1 << " and " << topping2 << " pizza! enjoy!";
 }
 
 
