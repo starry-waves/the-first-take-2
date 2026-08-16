@@ -6,34 +6,31 @@ using text_t = std::string;
 
 int main(){
 
+    int num;
+    int guess;
+    int tries = 0;
+
     srand(time(NULL));
+    num = (rand () % 100) + 1;
 
-    int num = (rand() % 5) + 1;
+    std::cout << "~~~ number guessing game ~~~\n";
 
-    switch(num){
-        case 1:
-        std::cout << "u win a good job pencil\n";
-        break;
+    do{
+        std::cout << "enter a guess between 1 - 100: \n";
+        std::cin >> guess;
+        tries++;
 
-        case 2:
-        std::cout << "u win a cool bracelet\n";
-        break;
+        if(guess > num){
+            std::cout << "too high!\n";
+        } else if (guess < num){
+            std::cout << "too low!\n";
+        } else{
+            std::cout << "correct!!\n number of tries: " << tries << '\n';
+        } 
+    }while (guess != num);
 
-        case 3:
-        std::cout << "u win a free lunch\n";
-        break;
+    std::cout << "thanks for playing!\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
 
-        case 4: 
-        std::cout << "u win a gift card\n";
-        break;
-
-        case 5:
-        std::cout << "u win concert tickets\n";
-        break;
-
-    }
-
-    std::cout << "num";
 
     return 0;
 }
