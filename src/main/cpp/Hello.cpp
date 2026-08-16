@@ -4,23 +4,23 @@
 
 using text_t = std::string;
 
-void happyBirthday(text_t name, int age);
-//its common practice to declare a function first, then define it later
+double square (double length);
 
 int main(){
-    text_t name;
-    int age;
-    std::cout << "hello! what is ur name? ";
-    std::getline(std::cin >> std::ws , name);
+    double length;
+    double area;
+    std::cout << "area calculator/ practice with perfect squares!\nplease insert a length: ";
+    std::cin >> length;
+    
+    area = square(length);
 
-    std::cout << "how old are u? ";
-    std::cin >> age;
-    happyBirthday(name, age);
+    std::cout << "the area is: " << area << " units squared!";
 
 
     return 0;
 }
-void happyBirthday(text_t name, int age){
-    std::cout << "happy birthday to u!\nhappy birthday to u!\nhappy birthday dear " << name << "\nhappy birthday to u!\nyou are: " << age << " years old!";
-} //create a function to sing happy birthday
+double square (double length){
+    return length * length;
+}
+
 
