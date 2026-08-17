@@ -17,6 +17,7 @@ int main(){
         std::cin >> choice;
         std::cin.clear();
         fflush(stdin);
+        //clears input buffer, then flushes it (doesn't work, my program is still acting weird when i type a character!)
 
         switch(choice){
             case 1:
@@ -68,8 +69,3 @@ double withdraw (double bal){
         return amount;
     }
 }
-
-
-
-
-
