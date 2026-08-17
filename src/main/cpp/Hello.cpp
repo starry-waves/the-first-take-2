@@ -7,41 +7,23 @@ using text = std::string;
 
 void sort (int array[], int size);
 int main(){
-    int array[] = {10, 1 , 9 , 5 , 8 , 2 , 4 , 3 , 6 , 7 };
+  text foods[10] = {"pizza" , "pizza" , "pizza" , "pizza" , "pizza" , "pizza" ,"pizza" , "pizza" , "pizza" , "pizza" ,};
 
-    int size = sizeof(array)/ sizeof(array[0]);
-
-    sort(array , size);
-
-    for (int element : array){
-        std::cout << element << " ";
+    for (text food : foods){
+        std::cout << food << '\n';
     }
-  
 
-
+    //use fill() for efficiency
+    const int SIZE = 100;
+    text lunch[100];
+    fill(foods, foods + SIZE, "pizza");
+    for (text lunc : lunch){
+        std::cout << lunc << '\n';
+    }
 
     return 0;
 }
 
-void sort (int array[], int size){
-
-    int temp;
-
-    //it is not necessary to compare the last value, since the larger values will naturally move towards the end
-    for (int i = 0; i < size - 1; i++){
-        for(int j = 0; j < size - i - 1; j++){
-            //prevents ocmputer from sorting already sorted elements
-            if (array[j] > array[j + 1]){
-                //is the element on the left greater than the one on the right
-                temp = array[j];
-                array[j] = array[j + 1];
-                array [j + 1] = temp;
-            }
-
-        }
-    }
-
-}
 
 
 
