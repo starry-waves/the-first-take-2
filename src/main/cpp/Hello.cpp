@@ -6,17 +6,25 @@
 using text = std::string;
 
 
+double gettotal(double prices[], int size);
 int main(){
 
-   text students[] = {"sponegob", "patrick", "squidward", "sandy"};
+double prices[] {49.99 , 75.00 , 34.45 , 15.05 };
+int size = sizeof(prices)/sizeof(prices[0]);
+double total = gettotal(prices , size);
 
-   for(text student : students){
-        std::cout << student << '\n';
-   }
-   
-   int grades[] = {65, 93, 72, 81};
-   for(int grade : grades){
-        std::cout << grade << '\n';
-   };
-
+std::cout << "$" << total;
+return 0;
 }
+
+double gettotal(double prices[], int size){
+//function is unaware of size of array, so pass in the array and the size
+    double total = 0;
+
+    for(int i = 0; i < size; i++){
+        total += prices[i];
+    }
+
+    return total;
+}
+
