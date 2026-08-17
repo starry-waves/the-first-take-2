@@ -5,38 +5,43 @@
 
 using text = std::string;
 
-int searchArray(text array[], int size, text element);
-
+void sort (int array[], int size);
 int main(){
+    int array[] = {10, 1 , 9 , 5 , 8 , 2 , 4 , 3 , 6 , 7 };
 
-    text foods[] = {"pizza", "hamburger", "hotdog"};
-    int size = sizeof(foods)/ sizeof(foods[0]);
-    int index;
-    text myFood;
+    int size = sizeof(array)/ sizeof(array[0]);
 
-    std::cout << "enter element to search for: " << '\n';
-    std::getline(std::cin, myFood);
+    sort(array , size);
 
-    index = searchArray(foods, size, myFood);
-     if(index != -1){
-        std::cout << myFood << " is at index: " << index;
-     } else{
-        std::cout << myFood << " is not in the array"; 
-     }
-
+    for (int element : array){
+        std::cout << element << " ";
+    }
+  
 
 
 
     return 0;
 }
 
-int searchArray(text array[], int size, text element){
-    for(int i = 0; i < size; i++){
-        if(array[i] == element){
-            return i;
+void sort (int array[], int size){
+
+    int temp;
+
+    //it is not necessary to compare the last value, since the larger values will naturally move towards the end
+    for (int i = 0; i < size - 1; i++){
+        for(int j = 0; j < size - i - 1; j++){
+            //prevents ocmputer from sorting already sorted elements
+            if (array[j] > array[j + 1]){
+                //is the element on the left greater than the one on the right
+                temp = array[j];
+                array[j] = array[j + 1];
+                array [j + 1] = temp;
+            }
+
         }
     }
-    return -1;
+
 }
+
 
 
