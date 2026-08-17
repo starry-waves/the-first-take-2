@@ -5,67 +5,100 @@
 
 using text_t = std::string;
 
-void showbalance(double bal);
-double deposit();
-double withdraw (double bal);
+char getuserchoice();
+char getcompchoice();
+void showchoice(char choice);
+void choosewinner(char player, char computer);
+
 int main(){
-    double balance = 123.98;
-    int choice = 0;
+
+    char player;
+    char comp;
+
+    player = getuserchoice();
+    std::cout << "your choice: ";
+    showchoice(player);
+
+    comp = getcompchoice();
+    std::cout << "\ncomputer's choice: ";
+    showchoice(comp);
+    choosewinner(player , comp);
+    
+}
+char getuserchoice(){
+    char player;
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    std::cout << "rock paper scissors game!\n";
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     do{
-        std::cout << "welcome to bank from temu: please type the corresponding number to what u would like to do";
-        std::cout << "\n1. show balance\n2. deposit money\n3. withdraw money\n4. exit\n";
-        std::cin >> choice;
-        std::cin.clear();
-        fflush(stdin);
-        //clears input buffer, then flushes it (doesn't work, my program is still acting weird when i type a character!)
+        std::cout << "type r for rock, p for paper, or s for scissors: \n";
+        std::cin >> player;
+    }while(player != 'r' && player != 's' && player != 'p');
 
-        switch(choice){
-            case 1:
-            showbalance(balance);
-            break;
-            case 2:
-            balance += deposit();
-            showbalance(balance);
-            break;
-            case 3:
-            balance -= withdraw(balance);
-            showbalance(balance);
-            case 4:
-            std::cout << "thanks for visiting!\n";
-            break;
-            default:
-            std::cout << "invalid choice\n";
-        }
-    } while(choice != 4);
-    
+    return player;
 }
-void showbalance(double bal){
-    std::cout << "ur balance is: $" << std::setprecision(2) << std::fixed << bal << '\n';
+char getcompchoice(){
+    srand(time(NULL));
+    int num = (rand() % 3) + 1;
+
+    switch(num){
+        case 1:
+        return 'r';
+        
+        case 2:
+        return 'p';
+
+        case 3:
+        return 's';
+    } //note: the break statement isnt required because the return keyword already does that
 }
-double deposit(){
-    double amount = 0;
+void showchoice(char choice){
 
-    std::cout << "enter amount to deposit: \n";
-    std::cin >> amount;
+    switch(choice){
+        case 'r':
+        std::cout << "rock";
+        break;
 
-    if (amount > 0){
-        return amount;
-    } else{
-        std::cout << "that is not possible\n";
+        case 'p':
+        std::cout << "paper";
+        break;
+
+        case 's':
+        std::cout << "scissors";
+        break;
     }
-    
-
 }
-double withdraw (double bal){
-    double amount = 0;
-    std::cout << "enter amount to withdraw: \n";
-    std::cin >> amount;
+void choosewinner(char player, char computer){
+    switch(player){
+        case 'r':
+        if(computer == 'r'){
+            std::cout << "\nits a tie!\n";
+        }else if(computer == 's'){
+            std::cout << "\nyou win!\n";
+        } else{
+            std::cout << "\ncomputer wins!";
+        }
+        break;
 
-    if (amount > bal){
-        std::cout << "that is not possible\n";
-    }else if(amount < 0){
-       std::cout << "that is not possible\n";
-    }else{
-        return amount;
+        case 'p':
+        if(computer == 'p'){
+            std::cout << "\nits a tie!\n";
+        }else if(computer == 'r'){
+            std::cout << "\nyou win!\n";
+        } else{
+            std::cout << "\ncomputer wins!";
+        }
+        break;
+
+        case 's':
+        if(computer == 's'){
+            std::cout << "\nits a tie!\n";
+        }else if(computer == 'p'){
+            std::cout << "\nyou win!\n";
+        } else{
+            std::cout << "\ncomputer wins!";
+        }
+        break;
+        
     }
 }
