@@ -5,26 +5,38 @@
 
 using text = std::string;
 
+int searchArray(text array[], int size, text element);
 
-double gettotal(double prices[], int size);
 int main(){
 
-double prices[] {49.99 , 75.00 , 34.45 , 15.05 };
-int size = sizeof(prices)/sizeof(prices[0]);
-double total = gettotal(prices , size);
+    text foods[] = {"pizza", "hamburger", "hotdog"};
+    int size = sizeof(foods)/ sizeof(foods[0]);
+    int index;
+    text myFood;
 
-std::cout << "$" << total;
-return 0;
+    std::cout << "enter element to search for: " << '\n';
+    std::getline(std::cin, myFood);
+
+    index = searchArray(foods, size, myFood);
+     if(index != -1){
+        std::cout << myFood << " is at index: " << index;
+     } else{
+        std::cout << myFood << " is not in the array"; 
+     }
+
+
+
+
+    return 0;
 }
 
-double gettotal(double prices[], int size){
-//function is unaware of size of array, so pass in the array and the size
-    double total = 0;
-
+int searchArray(text array[], int size, text element){
     for(int i = 0; i < size; i++){
-        total += prices[i];
+        if(array[i] == element){
+            return i;
+        }
     }
-
-    return total;
+    return -1;
 }
+
 
