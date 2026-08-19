@@ -5,21 +5,27 @@
 
 using text = std::string;
 
-void sort (int array[], int size);
+
 int main(){
-  text foods[10] = {"pizza" , "pizza" , "pizza" , "pizza" , "pizza" , "pizza" ,"pizza" , "pizza" , "pizza" , "pizza" ,};
 
-    for (text food : foods){
-        std::cout << food << '\n';
-    }
+        text foods[5];
+        int size = sizeof(foods)/sizeof(foods[0]);
+        text temp;
 
-    //use fill() for efficiency
-    const int SIZE = 100;
-    text lunch[100];
-    fill(foods, foods + SIZE, "pizza");
-    for (text lunc : lunch){
-        std::cout << lunc << '\n';
-    }
+        for(int i = 0; i < size; i++){
+            std::cout << "enter a food u like or q to quit: \n #" << i + 1 << ") ";
+            std::getline(std::cin, temp);
+            if(temp == "q" || temp == "Q"){
+                break;
+            } else{
+                foods[i] = temp;
+            }
+        }
+
+        std::cout << "\nu like the following foods:\n ";
+        for (int i = 0; !foods[i].empty(); i++){
+            std::cout << foods[i] << '\n';
+        }
 
     return 0;
 }
