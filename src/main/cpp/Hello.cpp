@@ -8,24 +8,20 @@ using text = std::string;
 
 int main(){
 
-        text foods[5];
-        int size = sizeof(foods)/sizeof(foods[0]);
-        text temp;
+    //first 3 is row, second 3 is column
+    text cars[3][3] = {{"mustang" , "escape", "F-150"},
+                      {"corvette", "equinox", "siverado"},
+                      {"challenger", "durango", "ram 150"}};
 
-        for(int i = 0; i < size; i++){
-            std::cout << "enter a food u like or q to quit: \n #" << i + 1 << ") ";
-            std::getline(std::cin, temp);
-            if(temp == "q" || temp == "Q"){
-                break;
-            } else{
-                foods[i] = temp;
-            }
-        }
+   int rows = sizeof(cars)/sizeof(cars[0]);
+   int columns = sizeof(cars[0])/sizeof(cars[0][0]);
 
-        std::cout << "\nu like the following foods:\n ";
-        for (int i = 0; !foods[i].empty(); i++){
-            std::cout << foods[i] << '\n';
+   for(int i = 0; i < rows; i++){
+        for(int j = 0; j < columns; j++){
+            std::cout << cars[i][j] << " ";
         }
+        std::cout << '\n';
+   }
 
     return 0;
 }
