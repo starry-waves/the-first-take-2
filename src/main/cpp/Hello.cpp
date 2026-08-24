@@ -6,26 +6,24 @@
 using namespace std;
 using text = std::string;
 
-int factorial(int num);
+template <typename T, typename U> 
+
+T max(T x, U y){
+    return (x > y) ? x : y;
+}
 int main(){
 
-  
-    cout << factorial(10);
+  int z = ::max(2, 3.1);
+  //use scope resolution operator to tell compiler to look outside of std namespace
+
+  cout << z;
+   
 
     return 0;
 }
 
-int factorial(int num){
-    int result = 1;
-   if (num > 1){
-    return num * factorial (num - 1);
-   }
-   else{
-    return 1;
-   }
-   
-    
-}
+
+
 
 
 
