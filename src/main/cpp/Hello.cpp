@@ -6,45 +6,42 @@
 using namespace std;
 using text = std::string;
 
-struct car{
-  text model;
-  int year;
-  text color;
-};
-void printcar(car &car);
+enum Day {sunday = 0, monday = 1, tuesday = 2, wednesday = 3, 
+          thursday = 4, friday = 5, saturday = 6};
+          //name + value
+          //c++ implicitly assigns the numbers
 
-void paintcar(car car, text color);
 
 int main(){
 
-  car car1;
-  car car2;
+Day today = sunday;
 
-  car1.model = "mustang";
-  car1.year = 2023;
-  car1.color = "red";
-
-  car2.model = "corvette";
-  car2.year = 2024;
-  car2.color = "blue";
-
-    paintcar(car1, "silver");
-    //only changes a copy of car1, not the awactual color value stored
-    printcar(car1);
-    printcar(car2);
+  switch (today){
+    case sunday:
+      cout << "today is sunday";
+      break;
+    case monday:
+      cout << "today is monday";
+      break;
+    case tuesday:
+      cout << "today is tuesday";
+      break;
+    case wednesday:
+      cout << "today is wednesday";
+      break;
+    case thursday:
+      cout << "today is thursday";
+      break;
+    case friday:
+      cout << "today is friday";
+      break;
+    case saturday:
+      cout << "today is saturday";
+      break;
+  }
 
    
     return 0;
-}
-
-void printcar(car &car){
-  cout << car.model << '\n';
-  cout << car.year << '\n';
-  cout << car.color << '\n';
-}
-
-void paintcar(car car, text color){
-  car.color = color;
 }
 
 
