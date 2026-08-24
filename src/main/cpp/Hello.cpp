@@ -6,39 +6,32 @@
 using namespace std;
 using text = std::string;
 
-class Human{
+class Student{
     public:
       text name;
-      text job;
       int age;
+      double gpa;
 
-      void eat(){
-        cout << "this person is eating! \n";
-      }
-
-      void drink(){
-        cout << "this person is drinking! \n";
-      }
-
-      void sleep(){
-        cout << "this person is sleeping!\n";
-      }
+      Student(text name, int age, double gpa){
+        this-> name = name;
+        this-> age = age;
+        this-> gpa = gpa;
+      } //create constructor within the class
+      //or
+      // Student(text x, int y, double z){
+      //   name = x;
+      //   age = y;
+      //   gpa = z;
+      // }//parameter names are different so this -> isnt necessary
 };
 
 
 int main(){
+  Student student1("juniper" , 21, 4.0);
 
-  Human human1;
-  human1.name = "juniper";
-  human1.job = "scientist";
-  human1.age = 21;
 
-  cout << human1.name << '\n';
-  cout << human1.job << '\n';
-  cout << human1.age << '\n';
-  human1.eat();
-  human1.drink();
-  human1.sleep();
+  
+  
    
     return 0;
 }
