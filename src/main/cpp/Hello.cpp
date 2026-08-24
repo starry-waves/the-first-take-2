@@ -6,40 +6,39 @@
 using namespace std;
 using text = std::string;
 
-enum Day {sunday = 0, monday = 1, tuesday = 2, wednesday = 3, 
-          thursday = 4, friday = 5, saturday = 6};
-          //name + value
-          //c++ implicitly assigns the numbers
+class Human{
+    public:
+      text name;
+      text job;
+      int age;
+
+      void eat(){
+        cout << "this person is eating! \n";
+      }
+
+      void drink(){
+        cout << "this person is drinking! \n";
+      }
+
+      void sleep(){
+        cout << "this person is sleeping!\n";
+      }
+};
 
 
 int main(){
 
-Day today = sunday;
+  Human human1;
+  human1.name = "juniper";
+  human1.job = "scientist";
+  human1.age = 21;
 
-  switch (today){
-    case sunday:
-      cout << "today is sunday";
-      break;
-    case monday:
-      cout << "today is monday";
-      break;
-    case tuesday:
-      cout << "today is tuesday";
-      break;
-    case wednesday:
-      cout << "today is wednesday";
-      break;
-    case thursday:
-      cout << "today is thursday";
-      break;
-    case friday:
-      cout << "today is friday";
-      break;
-    case saturday:
-      cout << "today is saturday";
-      break;
-  }
-
+  cout << human1.name << '\n';
+  cout << human1.job << '\n';
+  cout << human1.age << '\n';
+  human1.eat();
+  human1.drink();
+  human1.sleep();
    
     return 0;
 }
