@@ -6,34 +6,38 @@
 using namespace std;
 using text = std::string;
 
-class Pizza{
+class Stove{
+   private:
+    int temperature = 0;
     public:
-      text topping1;
-      text topping2;
-
-      Pizza (){
-        topping1 = "cheese";
+    Stove(int temperature){
+      settemp(temperature);
+    }
+    int gettemp(){
+      return temperature;
+    }
+    void settemp(int temp){
+      if(temp < 0){
+        this -> temperature = 0;
       }
-
-      Pizza(text topping1){
-       this-> topping1 = topping1;
+      else if(temp >= 10){
+        this -> temperature = 10;
       } 
-      Pizza(text topping1, text topping2){
-        this -> topping1 = topping1;
-       this-> topping2 = topping2;
+      else{
+        this -> temperature = temp;
       }
+    }
+
+  
+  
 };
 
 
 int main(){
- Pizza pizza1("pepperoni");
- Pizza pizza2("pepperoni" , "mushroom");
- Pizza pizza3;
+  Stove stove1(5);
 
- cout << pizza2.topping1 << '\n' << pizza2.topping2 << '\n';
- cout << pizza3.topping1;
-
-
+  stove1.settemp(-3);
+  cout << "the temp is: " << stove1.gettemp();
   
   
    
