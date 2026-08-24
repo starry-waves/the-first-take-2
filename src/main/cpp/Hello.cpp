@@ -6,46 +6,45 @@
 using namespace std;
 using text = std::string;
 
-  struct student {
-    text name; 
-    double gpa;
-    bool enrolled = true;
-  };
-  //acts as a data type
+struct car{
+  text model;
+  int year;
+  text color;
+};
+void printcar(car &car);
+
+void paintcar(car car, text color);
 
 int main(){
 
-  student student1;
-  student1.name = " el spongebob";
-  student1.gpa = 3.2;
+  car car1;
+  car car2;
 
+  car1.model = "mustang";
+  car1.year = 2023;
+  car1.color = "red";
 
-  cout << student1.name <<'\n';
-  cout << student1.gpa << '\n';
-  cout << student1.enrolled << '\n';
-  // prints 1 bc 1 = true in binary (switch is on)
+  car2.model = "corvette";
+  car2.year = 2024;
+  car2.color = "blue";
 
-  student student2;
-  student2.name = " el patrick";
-  student2.gpa = 1.9;
-
-
-  cout << student2.name <<'\n';
-  cout << student2.gpa << '\n';
-  cout << student2.enrolled << '\n';
-
-  student student3;
-  student1.name = " el squidward";
-  student1.gpa = 4.0;
-
-
-  cout << student3.name <<'\n';
-  cout << student3.gpa << '\n';
-  cout << student3.enrolled << '\n';
+    paintcar(car1, "silver");
+    //only changes a copy of car1, not the awactual color value stored
+    printcar(car1);
+    printcar(car2);
 
    
-
     return 0;
+}
+
+void printcar(car &car){
+  cout << car.model << '\n';
+  cout << car.year << '\n';
+  cout << car.color << '\n';
+}
+
+void paintcar(car car, text color){
+  car.color = color;
 }
 
 
