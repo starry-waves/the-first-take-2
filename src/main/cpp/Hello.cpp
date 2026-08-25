@@ -6,40 +6,46 @@
 using namespace std;
 using text = std::string;
 
-class Stove{
-   private:
-    int temperature = 0;
-    public:
-    Stove(int temperature){
-      settemp(temperature);
-    }
-    int gettemp(){
-      return temperature;
-    }
-    void settemp(int temp){
-      if(temp < 0){
-        this -> temperature = 0;
-      }
-      else if(temp >= 10){
-        this -> temperature = 10;
-      } 
-      else{
-        this -> temperature = temp;
-      }
-    }
-
-  
-  
+class Shape{
+  public:
+  double area;
+  double volume;
+};
+class Cube : public Shape{
+  public:
+  double side;
+  Cube(double side){
+    this -> side = side;
+    this -> area = side * side;
+    this -> volume = pow(side , 3);
+  }
+}; 
+class Sphere : public Shape{
+  public:
+  double radius;
+  Sphere(double radius){
+    this -> radius = radius;
+    this -> area = 4.0 * 3.14159 * pow(radius , 2);
+    this -> volume = (double)4/3 * 3.14159 * pow(radius , 3);
+  }
 };
 
 
 int main(){
-  Stove stove1(5);
 
-  stove1.settemp(-3);
-  cout << "the temp is: " << stove1.gettemp();
-  
-  
+  Cube cube1 (10);
+
+    cout << "cube info: \n";
+
+  cout << cube1.area << '\n';
+  cout << cube1.volume << '\n' << '\n';
+
+  cout << "sphere info: \n";
+
+  Sphere sphere1 (5);
+  cout << sphere1.area << '\n';
+  cout << sphere1.volume << '\n';
+
    
     return 0;
 }
